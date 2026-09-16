@@ -1,0 +1,2 @@
+# Youth_Leadership_Public_Speaking_Camp
+Automated website repository for Youth_Leadership_Public_Speaking_Camp
