@@ -1,0 +1,183 @@
+/* 
+============================================================
+Youth Leadership & Public Speaking Camp
+Dark Mode Stylesheet
+============================================================ 
+*/
+
+body.dark-mode {
+    --bg: #0D1820;
+    --warm-bg: #12212B;
+    --white: #152630;
+    --dark: #F3F7F8;
+    --text: #F3F7F8;
+    --muted: #AEBBC1;
+    --border: rgba(243, 247, 248, 0.10);
+    
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6 {
+    color: var(--dark) !important;
+}
+
+body.dark-mode .premium-card {
+    background-color: var(--white);
+    border-color: var(--border);
+}
+
+body.dark-mode .navbar-premium {
+    background: rgba(13, 24, 32, 0.95);
+    border-bottom: 1px solid var(--border);
+}
+
+body.dark-mode .navbar-premium .nav-link {
+    color: var(--text);
+}
+
+body.dark-mode .section-dark {
+    background-color: #0A131A;
+}
+
+body.dark-mode .section-warm {
+    background-color: #12212B;
+}
+
+body.dark-mode .section-soft-blue {
+    background-color: #152A38;
+}
+
+body.dark-mode .bg-white,
+body.dark-mode .bg-light,
+body.dark-mode footer.bg-white {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+body.dark-mode .text-dark,
+body.dark-mode footer.bg-white .text-dark,
+body.dark-mode footer.bg-white h4,
+body.dark-mode footer.bg-white h5,
+body.dark-mode footer.bg-white a {
+    color: var(--text) !important;
+}
+
+body.dark-mode .text-muted,
+body.dark-mode footer.bg-white .text-muted {
+    color: var(--muted) !important;
+}
+
+body.dark-mode .section {
+    background-color: var(--bg);
+}
+
+/* Authentication Page & Inputs */
+body.dark-mode input.form-control,
+body.dark-mode input.form-control.bg-light {
+    background-color: var(--white) !important; /* Maps to #152630 */
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+body.dark-mode input.form-control::placeholder {
+    color: var(--muted) !important;
+}
+
+body.dark-mode .border-light {
+    border-color: var(--border) !important;
+}
+
+/* Logo White in Dark Mode */
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-brand.text-primary,
+body.dark-mode .navbar-brand .text-primary {
+    color: #FFFFFF !important;
+}
+
+/* Auth Page Specific Dark Mode */
+body.dark-mode.auth-page,
+body.dark-mode.auth-page .bg-white,
+body.dark-mode.auth-page .bg-light {
+    background-color: var(--bg) !important;
+}
+
+body.dark-mode.auth-page .text-muted,
+body.dark-mode.auth-page .text-primary,
+body.dark-mode.auth-page .text-dark,
+body.dark-mode.auth-page p,
+body.dark-mode.auth-page label,
+body.dark-mode.auth-page a,
+body.dark-mode.auth-page h1,
+body.dark-mode.auth-page h2,
+body.dark-mode.auth-page h3,
+body.dark-mode.auth-page h4,
+body.dark-mode.auth-page h5,
+body.dark-mode.auth-page h6,
+body.dark-mode.auth-page span,
+body.dark-mode.auth-page i,
+body.dark-mode.auth-page div {
+    color: #FFFFFF !important;
+}
+
+body.dark-mode.auth-page .btn-primary-custom,
+body.dark-mode.auth-page .btn-primary-custom * {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: #FFFFFF !important;
+}
+
+body.dark-mode.auth-page .btn-outline-secondary {
+    border-color: rgba(255,255,255,0.2) !important;
+}
+
+body.dark-mode.auth-page input.form-control,
+body.dark-mode.auth-page input.form-control.bg-light {
+    background-color: rgba(255,255,255,0.05) !important; 
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+body.dark-mode.auth-page input.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.dark-mode.auth-page .border-light {
+    border-color: rgba(255,255,255,0.1) !important;
+}
+
+body.dark-mode .accordion-button,
+body.dark-mode .accordion-body {
+    background-color: var(--white) !important;
+    color: var(--text) !important;
+}
+body.dark-mode .accordion-item {
+    border-color: var(--border) !important;
+}
+body.dark-mode .accordion-button:not(.collapsed) {
+    background-color: var(--bg) !important;
+    color: #FFFFFF !important;
+}
+body.dark-mode .accordion-button::after {
+    filter: invert(1) brightness(2) !important;
+}
+body.dark-mode label,
+body.dark-mode .form-label {
+    color: var(--text) !important;
+}
+body.dark-mode input.form-control,
+body.dark-mode select.form-select,
+body.dark-mode textarea.form-control {
+    background-color: var(--white) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+body.dark-mode input.form-control::placeholder,
+body.dark-mode textarea.form-control::placeholder {
+    color: var(--muted) !important;
+}

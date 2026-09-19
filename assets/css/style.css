@@ -1,0 +1,442 @@
+/* 
+============================================================
+Youth Leadership & Public Speaking Camp
+Core Stylesheet
+============================================================ 
+*/
+
+:root {
+    /* Brand Colors */
+    --primary: #234E70;
+    --secondary: #2E7D72;
+    --accent: #F2A65A;
+    --energy: #E76F51;
+    --soft-blue: #DCEAF3;
+    --soft-green: #DCEEE9;
+    
+    /* Background Colors */
+    --bg: #F7F9FA;
+    --warm-bg: #FFF7ED;
+    --white: #FFFFFF;
+    
+    /* Text & UI Colors */
+    --dark: #12212B;
+    --text: #17252D;
+    --muted: #65747D;
+    --border: rgba(23,37,45,0.10);
+
+    /* Typography (Using Clamp for responsiveness) */
+    --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Desktop -> Mobile clamp values */
+    --fs-h1: clamp(40px, 5vw, 68px);
+    --fs-h2: clamp(31px, 4vw, 46px);
+    --fs-h3: clamp(23px, 3vw, 30px);
+    --fs-h4: clamp(18px, 2vw, 22px);
+    --fs-body: clamp(16px, 1.5vw, 17px);
+    
+    /* Spacing */
+    --section-padding: clamp(60px, 8vw, 120px);
+}
+
+/* ============================================================
+   Base Styles
+============================================================ */
+
+body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background-color: var(--bg);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--dark);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--energy);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================================
+   Layout & Sections
+============================================================ */
+
+.section {
+    padding: var(--section-padding) 0;
+}
+
+.section-dark {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.section-dark h1, 
+.section-dark h2, 
+.section-dark h3, 
+.section-dark h4 {
+    color: var(--white);
+}
+
+.section-warm {
+    background-color: var(--warm-bg);
+}
+
+.section-soft-blue {
+    background-color: var(--soft-blue);
+}
+
+/* ============================================================
+   Buttons
+============================================================ */
+
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary-custom {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(35, 78, 112, 0.2);
+}
+
+.btn-secondary-custom {
+    background-color: var(--accent);
+    color: var(--dark);
+}
+
+.btn-secondary-custom:hover {
+    background-color: var(--energy);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(231, 111, 81, 0.2);
+}
+
+.btn-outline-custom {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* ============================================================
+   Cards
+============================================================ */
+
+.premium-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 40px rgba(23, 37, 45, 0.05);
+    transition: all 0.4s ease;
+    height: 100%;
+    border: 1px solid var(--border);
+}
+
+.premium-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(23, 37, 45, 0.1);
+}
+
+/* ============================================================
+   Navigation
+============================================================ */
+
+.navbar-premium {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(23, 37, 45, 0.05);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-premium .nav-link {
+    color: var(--text);
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar-premium .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.navbar-premium .nav-link:hover::before,
+.navbar-premium .nav-link.active::before {
+    width: 100%;
+}
+
+.navbar-premium .nav-link.dropdown-toggle:hover::before {
+    width: 0; /* Remove hover effect for dropdown toggles */
+}
+
+.navbar-premium .nav-link.dropdown-toggle.active::before {
+    width: 100%; /* Keep active effect for dropdown toggles */
+}
+
+.navbar-premium .dropdown-toggle::after {
+    display: none !important; /* Hide default bootstrap caret as we use custom icon */
+}
+
+.navbar-brand {
+    font-weight: 800;
+    color: var(--primary) !important;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   Utility Classes
+============================================================ */
+
+.text-primary { color: var(--primary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.text-accent { color: var(--accent) !important; }
+.text-energy { color: var(--energy) !important; }
+
+.bg-primary { background-color: var(--primary) !important; }
+.bg-secondary { background-color: var(--secondary) !important; }
+.bg-accent { background-color: var(--accent) !important; }
+.bg-energy { background-color: var(--energy) !important; }
+
+.min-vh-80 { min-height: 80vh; }
+.min-vh-100 { min-height: 100vh; }
+
+.fw-bold { font-weight: 700; }
+.fw-black { font-weight: 900; }
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(35, 78, 112, 0.3);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--energy);
+    color: var(--white);
+    transform: translateY(-5px);
+}
+
+/* Footer Hover Effects */
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary) !important;
+}
+
+footer .ph-fill {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer a:hover .ph-fill {
+    color: var(--primary) !important;
+    transform: translateY(-3px);
+}
+
+.icon-hover { transition: color 0.3s ease; }
+.icon-hover:hover { color: var(--primary) !important; }
+
+/* 1. Prevent nav links from breaking onto two lines on desktop RTL */
+.navbar-nav .nav-link {
+    white-space: nowrap;
+}
+
+/* 2. Hamburger icon white in dark mode */
+html[data-theme='dark'] .navbar-toggler i,
+body.dark-mode .navbar-toggler i {
+    color: #ffffff !important; }
+
+/* 3. Mobile layout for toggles and login button inside hamburger */
+@media (max-width: 1199.98px) {
+    .navbar-collapse .d-flex.align-items-center.gap-3 {
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+        margin-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    .navbar-collapse .d-flex.align-items-center.gap-3 > a.btn {
+        display: inline-flex !important;
+        width: 100% !important;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    /* Hamburger Menu Scroll on short screens */
+    .navbar-collapse {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}
+
+/* Mobile Active Menu Styling */
+.nav-item.d-xl-none .nav-link.active {
+    background-color: var(--primary);
+    color: var(--white) !important;
+    border-radius: 6px;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Fix text-dark overriding hamburger icon in dark mode */
+body.dark-mode .navbar-toggler i.text-dark,
+body.dark-mode .navbar-toggler i {
+    color: #ffffff !important; }
+
+/* Dark mode buttons text color */
+body.dark-mode #theme-toggle i,
+body.dark-mode #theme-toggle,
+body.dark-mode #rtl-toggle i,
+body.dark-mode #rtl-toggle,
+body.dark-mode .btn-outline-secondary {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Prevent horizontal scroll in RTL */
+html[dir='rtl'] body {
+    overflow-x: hidden;
+}
+
+/* Dark mode button hover states */
+body.dark-mode .btn-outline-custom:hover,
+body.dark-mode .btn-primary-custom:hover,
+body.dark-mode .btn-secondary-custom:hover,
+body.dark-mode .btn-outline-custom:hover,
+body.dark-mode .btn-outline-secondary:hover {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: var(--dark) !important; }
+
+
+
+
+    
+    /* Enforce white hamburger icon on all pages on mobile view */
+    .navbar-toggler i {
+        color: #ffffff !important; }
+}
+
+
+
+/* Ensure responsive width classes work properly for Home 2 hero layout */
+@media (min-width: 992px) {
+    .w-lg-50 {
+        width: 50% !important;
+    }
+}
+
+/* Ensure blue primary buttons have white text in dark mode */
+body.dark-mode .btn-primary-custom,
+body.dark-mode .bg-primary {
+    color: #ffffff !important;
+}
+
+/* Footer Logo Size & Dark Mode Color */
+footer h4.text-dark i,
+footer h4.text-dark {
+    font-size: 1.5rem !important;
+    letter-spacing: -0.02em !important;
+    font-weight: 800 !important;
+}
+body.dark-mode footer h4.text-dark i,
+body.dark-mode footer h4.text-dark {
+    color: #ffffff !important;
+}
+body.dark-mode footer h4.text-dark i,
+body.dark-mode footer h4.text-dark {
+    color: #ffffff !important;
+}
+
+
