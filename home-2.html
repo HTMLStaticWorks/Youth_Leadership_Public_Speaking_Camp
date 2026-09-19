@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Next Generation of Leaders - Youth Camp</title>
+    <meta name="description"
+        content="Confidence is a skill. Leadership is a journey. Join our premium youth development camp.">
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'&gt;&lt;path d='M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0ZM216,128a8,8,0,0,1-16,0,72.08,72.08,0,0,0-72-72v24a8,8,0,0,1-16,0V56a72.08,72.08,0,0,0-72,72,8,8,0,0,1-16,0,88.1,88.1,0,0,1,88-87.64V24a8,8,0,0,1,16,0V40.36A88.1,88.1,0,0,1,216,128ZM128,248a8,8,0,0,1-8-8v-24.36A88.1,88.1,0,0,1,40,128a8,8,0,0,1,16,0,72.08,72.08,0,0,0,72,72v24a8,8,0,0,1-16,0V144a72.08,72.08,0,0,0-72-72,8,8,0,0,1-16,0,88.1,88.1,0,0,1,88,87.64V240A8,8,0,0,1,128,248Z' fill='%23234E70'/&gt;&lt;/svg&gt;">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <script>
+        if (localStorage.getItem('dir') === 'rtl') {
+            document.documentElement.setAttribute('dir', 'rtl');
+        }
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-xl navbar-premium fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="ph-fill ph-microphone-stage text-primary me-2"></i>FindYourVoice.
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="ph ph-list fs-1 text-dark"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown d-none d-xl-block">
+                        <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Home <i class="ph-bold ph-caret-down ms-1" style="font-size: 0.8em;"></i>
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="homeDropdown">
+                            <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-xl-none"><a class="nav-link " href="index.html">Home 1</a></li>
+                    <li class="nav-item d-xl-none"><a class="nav-link active" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="curriculum.html">Curriculum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="camp-experience.html">Camp Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown d-none d-xl-block">
+                        <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dashboard <i class="ph-bold ph-caret-down ms-1" style="font-size: 0.8em;"></i>
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dashboardDropdown">
+                            <li><a class="dropdown-item" href="admin-dashboard.html">Admin Dashboard</a></li>
+                            <li><a class="dropdown-item" href="parent-dashboard.html">Parent Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="admin-dashboard.html">Admin Dashboard</a>
+                    </li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="parent-dashboard.html">Parent Dashboard</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button
+                        class="btn btn-outline-secondary border border-2 d-flex align-items-center justify-content-center p-2 rounded-circle mx-1"
+                        style="width: 40px; height: 40px;" id="theme-toggle" aria-label="Toggle Dark Mode"><i
+                            class="ph ph-moon fs-5"></i></button>
+                    <button
+                        class="btn btn-outline-secondary border border-2 d-flex align-items-center justify-content-center p-2 rounded-circle mx-1"
+                        style="width: 40px; height: 40px;" id="rtl-toggle" aria-label="Toggle RTL"><i
+                            class="ph ph-arrows-left-right fs-5"></i></button>
+                    <a href="login.html" class="btn btn-primary-custom d-none d-lg-inline-flex">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION (Split Screen) -->
+    <section class="min-vh-100 d-flex flex-column flex-lg-row pt-5 pt-lg-0">
+        <!-- Left Side: Content -->
+        <div
+            class="w-100 w-lg-50 d-flex align-items-center bg-white position-relative overflow-hidden section py-5 my-auto">
+            <!-- Decorative geometric lines -->
+            <div class="position-absolute top-0 start-0 w-100 h-100"
+                style="background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 50px 50px; opacity: 0.5;">
+            </div>
+
+            <div class="container px-4 px-xl-5 position-relative z-1 fade-up text-center text-lg-start">
+                <span class="text-secondary fw-bold text-uppercase tracking-wide mb-3 d-block">The Next Generation Of
+                    Leaders</span>
+                <h1 class="display-4 fw-black text-dark mb-4 lh-sm">
+                    Confidence Is A Skill.<br>
+                    <span class="text-energy">Leadership Is A Journey.</span>
+                </h1>
+                <p class="fs-5 text-muted mb-5 max-w-600">
+                    Equip your child with the tools they need to communicate effectively, think critically, and lead
+                    with purpose in a complex world.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                    <a href="programs.html" class="btn btn-primary-custom btn-premium">Discover The Camp</a>
+                    <a href="curriculum.html" class="btn btn-outline-custom btn-premium">View Curriculum</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Imagery -->
+        <div class="w-100 w-lg-50 position-relative mt-5 mt-lg-0" style="min-height: 400px;">
+            <div class="row g-0 h-100">
+                <div class="col-6 h-100 p-2 fade-up" style="transition-delay: 0.1s;">
+                    <div class="rounded-4 overflow-hidden h-100 w-100 position-relative">
+                        <img src="assets/images/home2-img1.jpg" alt="Student portrait"
+                            class="w-100 h-100 object-fit-cover" style="object-fit: cover; aspect-ratio: 1;">
+                        <div
+                            class="position-absolute top-0 end-0 m-3 bg-white px-3 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
+                            <i class="ph-fill ph-trend-up text-secondary"></i>
+                            <span class="fw-bold text-dark small">Growth</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 h-100 p-2 fade-up" style="transition-delay: 0.2s;">
+                    <div class="rounded-4 overflow-hidden h-100 w-100 position-relative">
+                        <img src="assets/images/home2-img2.jpg" alt="Stage public speaking"
+                            class="w-100 h-100 object-fit-cover" style="object-fit: cover; aspect-ratio: 1;">
+                        <div
+                            class="position-absolute bottom-0 start-0 m-3 bg-white px-3 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
+                            <i class="ph-fill ph-microphone-stage text-primary"></i>
+                            <span class="fw-bold text-dark small">Speaking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. WHY LEADERSHIP SKILLS MATTER -->
+    <section class="section section-soft-blue">
+        <div class="container">
+            <div class="text-center mb-5 fade-up">
+                <h2 class="display-6 fw-bold">Why These Skills Matter.</h2>
+                <p class="text-muted max-w-700 mx-auto fs-5">Beyond the classroom, these core competencies shape future
+                    success.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Editorial Skill Items -->
+                <div class="col-md-6 col-lg-4 fade-up">
+                    <div
+                        class="bg-white p-5 rounded-4 h-100 border border-light shadow-sm transition-transform hover-lift group text-center">
+                        <h3 class="fw-bold mb-3 group-hover:text-primary transition-colors">Communication</h3>
+                        <p class="text-muted">The ability to express ideas clearly and concisely to any audience.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 fade-up" style="transition-delay: 0.1s;">
+                    <div
+                        class="bg-white p-5 rounded-4 h-100 border border-light shadow-sm transition-transform hover-lift group text-center">
+                        <h3 class="fw-bold mb-3 group-hover:text-primary transition-colors">Confidence</h3>
+                        <p class="text-muted">Inner belief that allows students to stand tall and share their voice.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 fade-up" style="transition-delay: 0.2s;">
+                    <div
+                        class="bg-white p-5 rounded-4 h-100 border border-light shadow-sm transition-transform hover-lift group text-center">
+                        <h3 class="fw-bold mb-3 group-hover:text-primary transition-colors">Decision Making</h3>
+                        <p class="text-muted">Evaluating options critically and choosing the right path forward.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 fade-up" style="transition-delay: 0.3s;">
+                    <div
+                        class="bg-white p-5 rounded-4 h-100 border border-light shadow-sm transition-transform hover-lift group text-center">
+                        <h3 class="fw-bold mb-3 group-hover:text-primary transition-colors">Teamwork</h3>
+                        <p class="text-muted">Collaborating with diverse personalities to achieve a common goal.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 fade-up" style="transition-delay: 0.4s;">
+                    <div
+                        class="bg-white p-5 rounded-4 h-100 border border-light shadow-sm transition-transform hover-lift group text-center">
+                        <h3 class="fw-bold mb-3 group-hover:text-primary transition-colors">Presentation</h3>
+                        <p class="text-muted">Structuring a narrative and delivering it with impactful body language.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 fade-up" style="transition-delay: 0.5s;">
+                    <div
+                        class="bg-white p-5 rounded-4 h-100 border border-light shadow-sm transition-transform hover-lift group text-center">
+                        <h3 class="fw-bold mb-3 group-hover:text-primary transition-colors">Problem Solving</h3>
+                        <p class="text-muted">Thinking critically and adapting when faced with unexpected challenges.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CURRICULUM PREVIEW -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="row align-items-center mb-5 fade-up">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h2 class="display-6 fw-bold mb-3">What Students Actually Learn.</h2>
+                    <p class="text-muted fs-5">A structured, modular learning path designed to build competence layer by
+                        layer.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end mt-4 mt-lg-0">
+                    <a href="curriculum.html" class="btn btn-outline-custom btn-premium">Explore Full Curriculum</a>
+                </div>
+            </div>
+
+            <!-- Horizontal Timeline / Modular Path -->
+            <div class="row g-0 rounded-4 overflow-hidden shadow-sm border border-light fade-up">
+                <div class="col-lg-4 col-md-6 border-end border-bottom border-light">
+                    <div class="p-5 h-100 bg-white text-center">
+                        <img src="assets/images/learn1.jpg" alt="Public Speaking" class="img-fluid rounded mb-4 w-100"
+                            style="height: 200px; object-fit: cover;">
+                        <h4 class="fw-bold mb-3">Public Speaking</h4>
+                        <p class="text-muted small mb-0">Mastering vocal variety, pacing, and audience engagement.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 border-end border-bottom border-light">
+                    <div class="p-5 h-100 bg-white text-center">
+                        <img src="assets/images/learn2.jpg" alt="Leadership" class="img-fluid rounded mb-4 w-100"
+                            style="height: 200px; object-fit: cover;">
+                        <h4 class="fw-bold mb-3">Leadership</h4>
+                        <p class="text-muted small mb-0">Understanding leadership styles and taking responsibility.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 border-bottom border-light">
+                    <div class="p-5 h-100 bg-white text-center">
+                        <img src="assets/images/learn3.jpg" alt="Communication" class="img-fluid rounded mb-4 w-100"
+                            style="height: 200px; object-fit: cover;">
+                        <h4 class="fw-bold mb-3">Communication</h4>
+                        <p class="text-muted small mb-0">Active listening, empathy, and clear articulation of ideas.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 border-end border-light">
+                    <div class="p-5 h-100 bg-white text-center">
+                        <img src="assets/images/learn4.jpg" alt="Teamwork" class="img-fluid rounded mb-4 w-100"
+                            style="height: 200px; object-fit: cover;">
+                        <h4 class="fw-bold mb-3">Teamwork</h4>
+                        <p class="text-muted small mb-0">Collaborative problem solving and conflict resolution.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 border-end border-light">
+                    <div class="p-5 h-100 bg-white text-center">
+                        <img src="assets/images/learn5.jpg" alt="Presentation Skills"
+                            class="img-fluid rounded mb-4 w-100" style="height: 200px; object-fit: cover;">
+                        <h4 class="fw-bold mb-3">Presentation Skills</h4>
+                        <p class="text-muted small mb-0">Structuring a compelling narrative and visual storytelling.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 border-light">
+                    <div class="p-5 h-100 bg-white text-center">
+                        <img src="assets/images/learn6.jpg" alt="Critical Thinking" class="img-fluid rounded mb-4 w-100"
+                            style="height: 200px; object-fit: cover;">
+                        <h4 class="fw-bold mb-3">Critical Thinking</h4>
+                        <p class="text-muted small mb-0">Analyzing information, debating, and constructing arguments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SKILL DEVELOPMENT -->
+    <section class="section section-dark overflow-hidden">
+        <div class="container position-relative z-1">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0 fade-up">
+                    <h2 class="display-6 fw-bold mb-4">Measurable Progress.</h2>
+                    <p class="text-white opacity-75 fs-5 mb-5">
+                        Parents can track their child's development through our dedicated dashboard. We believe in
+                        visible, celebrated growth.
+                    </p>
+                    <div class="d-flex align-items-center gap-4 mb-4">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 48px; height: 48px;"><i class="ph-bold ph-arrow-right"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-white">Starting Point</h5>
+                            <small class="text-muted">Initial assessment & goals</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-4 mb-4">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 48px; height: 48px;"><i class="ph-bold ph-chalkboard-teacher"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-white">Practice</h5>
+                            <small class="text-muted">Workshops & exercises</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-4 mb-4">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 48px; height: 48px;"><i class="ph-bold ph-chat-centered-dots"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-white">Feedback</h5>
+                            <small class="text-muted">Constructive mentor review</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 48px; height: 48px;"><i class="ph-bold ph-chart-line-up"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-white">Progress</h5>
+                            <small class="text-muted">Visible improvement recorded</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-1 fade-up" style="transition-delay: 0.2s;">
+                    <!-- Demo Progress Visual -->
+                    <div class="bg-white rounded-4 p-5 shadow-lg border border-border">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="text-dark fw-bold mb-0">Skill Tracking</h4>
+                            <span class="badge bg-light text-muted border">Demo Data</span>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-semibold text-dark">Confidence</span>
+                                <span class="text-muted small">85%</span>
+                            </div>
+                            <div class="progress rounded-pill bg-light" style="height: 8px;">
+                                <div class="progress-bar bg-primary rounded-pill skill-progress-fill" role="progressbar"
+                                    style="width: 0%; transition: width 1.5s ease-out;" data-progress="85"
+                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-semibold text-dark">Communication</span>
+                                <span class="text-muted small">70%</span>
+                            </div>
+                            <div class="progress rounded-pill bg-light" style="height: 8px;">
+                                <div class="progress-bar bg-secondary rounded-pill skill-progress-fill"
+                                    role="progressbar"
+                                    style="width: 0%; transition: width 1.5s ease-out; transition-delay: 0.2s;"
+                                    data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-semibold text-dark">Presentation</span>
+                                <span class="text-muted small">90%</span>
+                            </div>
+                            <div class="progress rounded-pill bg-light" style="height: 8px;">
+                                <div class="progress-bar bg-accent rounded-pill skill-progress-fill" role="progressbar"
+                                    style="width: 0%; transition: width 1.5s ease-out; transition-delay: 0.4s;"
+                                    data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-0">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-semibold text-dark">Leadership</span>
+                                <span class="text-muted small">65%</span>
+                            </div>
+                            <div class="progress rounded-pill bg-light" style="height: 8px;">
+                                <div class="progress-bar bg-energy rounded-pill skill-progress-fill" role="progressbar"
+                                    style="width: 0%; transition: width 1.5s ease-out; transition-delay: 0.6s;"
+                                    data-progress="65" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TESTIMONIALS -->
+    <section class="section section-warm">
+        <div class="container">
+            <div class="text-center mb-5 fade-up">
+                <h2 class="display-6 fw-bold">Stories Of Growth.</h2>
+            </div>
+
+            <div class="row justify-content-center fade-up">
+                <div class="col-lg-10">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner pb-5">
+                            <div class="carousel-item active">
+                                <div class="text-center px-4">
+                                    <i class="ph-fill ph-quotes text-primary mb-4"
+                                        style="font-size: 3rem; opacity: 0.2;"></i>
+                                    <h4 class="fw-normal lh-base mb-4 text-dark max-w-700 mx-auto">
+                                        "The transformation in my daughter has been incredible. She went from being
+                                        terrified to speak in front of her class to volunteering to lead group
+                                        projects."
+                                    </h4>
+                                    <div class="d-flex align-items-center justify-content-center gap-3 mt-5">
+                                        <!-- Placeholder Image -->
+                                        <div class="rounded-circle bg-light border border-2 border-white shadow-sm overflow-hidden"
+                                            style="width: 64px; height: 64px;">
+                                            <img src="assets/images/testi1.avif" alt="Parent sample"
+                                                class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="text-start">
+                                            <h6 class="fw-bold mb-0">Sarah Jenkins</h6>
+                                            <small class="text-muted">Parent (Sample Demo)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <div class="text-center px-4">
+                                    <i class="ph-fill ph-quotes text-primary mb-4"
+                                        style="font-size: 3rem; opacity: 0.2;"></i>
+                                    <h4 class="fw-normal lh-base mb-4 text-dark max-w-700 mx-auto">
+                                        "The camp provided an amazing environment for growth. I've never seen such a
+                                        supportive community."
+                                    </h4>
+                                    <div class="d-flex align-items-center justify-content-center gap-3 mt-5">
+                                        <div class="rounded-circle bg-light border border-2 border-white shadow-sm overflow-hidden"
+                                            style="width: 64px; height: 64px;">
+                                            <img src="assets/images/testi2.avif" alt="Parent sample 2"
+                                                class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                        <div class="text-start">
+                                            <h6 class="fw-bold mb-0">Michael Chen</h6>
+                                            <small class="text-muted">Parent (Sample Demo)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-indicators bottom-0 mb-0">
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
+                                class="active bg-primary" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+                                class="bg-primary" aria-label="Slide 2"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FINAL CTA -->
+    <section class="section bg-white text-center">
+        <div class="container fade-up">
+            <h2 class="display-5 fw-black mb-4">Ready To Help Them Step Forward?</h2>
+            <p class="fs-5 text-muted max-w-700 mx-auto mb-5">
+                Join our upcoming sessions and watch them find their voice.
+            </p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="programs.html" class="btn btn-outline-custom btn-premium">View Programs</a>
+                <a href="enrollment.html" class="btn btn-primary-custom btn-premium">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-white text-dark border-top pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-dark fw-bold mb-4 d-flex align-items-center"><i
+                            class="ph-fill ph-microphone-stage text-primary me-2"></i>FindYourVoice.</h4>
+                    <p class="text-muted pe-lg-4">A premium youth development camp dedicated to building confidence,
+                        leadership, and public speaking skills in the next generation.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-dark fw-bold mb-4">Explore</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="programs.html" class="text-muted text-decoration-none">Programs</a>
+                        </li>
+                        <li class="mb-2"><a href="curriculum.html"
+                                class="text-muted text-decoration-none">Curriculum</a></li>
+                        <li class="mb-2"><a href="camp-experience.html" class="text-muted text-decoration-none">Camp
+                                Experience</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-dark fw-bold mb-4">Parent Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="schedule.html" class="text-muted text-decoration-none">Schedule</a>
+                        </li>
+                        <li class="mb-2"><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="testimonials.html"
+                                class="text-muted text-decoration-none">Testimonials</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a>
+                        </li>
+                        <li class="mb-2"><a href="login.html" class="text-energy text-decoration-none fw-bold">Login</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-dark fw-bold mb-4">Connect</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="ph ph-envelope-simple me-2"></i> hello@findyourvoice.edu</li>
+                        <li class="mb-2"><i class="ph ph-phone me-2"></i> +1 (555) 123-4567</li>
+                        <li class="mb-2"><i class="ph ph-map-pin me-2"></i> 123 Education Blvd, NY</li>
+                    </ul>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-dark"><i class="ph-fill ph-instagram-logo fs-4"></i></a>
+                        <a href="#" class="text-dark"><i class="ph-fill ph-facebook-logo fs-4"></i></a>
+                        <a href="#" class="text-dark"><i class="ph-fill ph-twitter-logo fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25">
+            <div class="row align-items-center mt-4">
+                <div class="col-md-6 text-center text-md-start">
+                    <small class="text-muted">&copy; 2026 FindYourVoice Camp. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top border-0" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="ph-bold ph-caret-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Trigger progress bars on Home 2
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const progressObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bars = entry.target.querySelectorAll('.skill-progress-fill');
+                        bars.forEach(bar => {
+                            const targetWidth = bar.getAttribute('data-progress');
+                            bar.style.width = targetWidth + '%';
+                        });
+                        progressObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const skillSection = document.querySelector('.section-dark');
+            if (skillSection) {
+                progressObserver.observe(skillSection);
+            }
+        });
+    </script>
+</body>
+
+</html>

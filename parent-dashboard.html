@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard - FindYourVoice</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'&gt;&lt;path d='M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0ZM216,128a8,8,0,0,1-16,0,72.08,72.08,0,0,0-72-72v24a8,8,0,0,1-16,0V56a72.08,72.08,0,0,0-72,72,8,8,0,0,1-16,0,88.1,88.1,0,0,1,88,87.64V24a8,8,0,0,1,16,0V40.36A88.1,88.1,0,0,1,216,128ZM128,248a8,8,0,0,1-8-8v-24.36A88.1,88.1,0,0,1,40,128a8,8,0,0,1,16,0,72.08,72.08,0,0,0,72,72v24a8,8,0,0,1-16,0V144a72.08,72.08,0,0,0-72-72,8,8,0,0,1-16,0,88.1,88.1,0,0,1,88,87.64V240A8,8,0,0,1,128,248Z' fill='%23234E70'/&gt;&lt;/svg&gt;">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    
+    <style>
+        body { background-color: var(--bg); }
+        .dashboard-sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: var(--white);
+            border-right: 1px solid var(--border);
+            z-index: 1040;
+            transition: transform 0.3s ease;
+        }
+        .dashboard-content {
+            margin-left: 280px;
+            margin-top: 70px;
+        }
+        .topbar {
+            height: 70px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 280px;
+            border-bottom: 1px solid var(--border);
+            z-index: 1030;
+            transition: left 0.3s ease;
+            width: calc(100% - 280px);
+        }
+        @media (max-width: 991.98px) {
+            .topbar { left: 0; width: 100%; }
+        }
+        
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .sidebar-link:hover, .sidebar-link.active { background-color: var(--primary); color: var(--white) !important; }
+        
+        .nav-pills .nav-link {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        @media (max-width: 991.98px) {
+            .dashboard-sidebar {
+                top: 70px;
+                height: calc(100vh - 70px);
+                transform: translateY(-150%);
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                z-index: 1020;
+            }
+            .dashboard-sidebar.show { transform: translateY(0); }
+            .dashboard-content { margin-left: 0; }
+            .topbar {
+            height: 70px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 280px;
+            border-bottom: 1px solid var(--border);
+            z-index: 1030;
+            transition: left 0.3s ease;
+            width: calc(100% - 280px);
+        }
+        @media (max-width: 991.98px) {
+            .topbar { left: 0; width: 100%; }
+        }
+            .sidebar-logo-container { display: none !important; }
+        }
+    </style>
+    <script>
+        if (localStorage.getItem('dir') === 'rtl') {
+            document.documentElement.setAttribute('dir', 'rtl');
+        }
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
+        }
+    </script>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar p-3 overflow-auto" id="dashboard-sidebar">
+        <div class="sidebar-logo-container d-flex align-items-center justify-content-between mb-4 px-2 mt-2">
+            <a class="d-flex align-items-center text-decoration-none" href="index.html">
+                <i class="ph-fill ph-microphone-stage text-primary fs-3 me-2"></i>
+                <h4 class="fw-black text-dark mb-0">FindYourVoice.</h4>
+            </a>
+        </div>
+        <div class="nav flex-column mt-4 nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <small class="text-muted text-uppercase fw-bold mb-2 px-3" style="font-size: 0.75rem;">Menu</small>
+            
+            <button class="sidebar-link active nav-link" id="tab-overview-tab" data-bs-toggle="pill" data-bs-target="#tab-overview" type="button" role="tab" aria-selected="true" onclick="closeSidebarMobile()">
+                <i class="ph-fill ph-squares-four fs-5"></i> Overview
+            </button>
+            <button class="sidebar-link nav-link" id="tab-progress-tab" data-bs-toggle="pill" data-bs-target="#tab-progress" type="button" role="tab" aria-selected="false" onclick="closeSidebarMobile()">
+                <i class="ph-fill ph-chart-line-up fs-5"></i> Progress
+            </button>
+            <button class="sidebar-link nav-link" id="tab-settings-tab" data-bs-toggle="pill" data-bs-target="#tab-settings" type="button" role="tab" aria-selected="false" onclick="closeSidebarMobile()">
+                <i class="ph-fill ph-gear fs-5"></i> Settings
+            </button>
+            
+            <a href="index.html" class="sidebar-link text-danger mt-4"><i class="ph-fill ph-sign-out fs-5"></i> Logout</a>
+
+            <div class="d-lg-none border-top border-light pt-4 mt-4 px-2">
+                <div class="d-flex gap-2 mb-3">
+                    <button class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center flex-grow-1" id="theme-toggle-mob" aria-label="Toggle Dark Mode"><i class="ph ph-moon fs-5"></i></button>
+                    <button class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center flex-grow-1" id="rtl-toggle-mob" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right fs-5"></i></button>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px; font-weight: 600;">SJ</div>
+                    <div class="d-flex flex-column">
+                        <span class="fw-bold text-dark mb-0 text-truncate" style="max-width: 150px;">Sarah Jenkins</span>
+                        <small class="text-muted">Parent</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+        <!-- TOPBAR -->
+    <header class="topbar d-flex align-items-center justify-content-between px-4 bg-white shadow-sm">
+        <div class="d-flex align-items-center gap-3">
+            <a class="d-flex align-items-center text-decoration-none d-lg-none" href="index.html">
+                <i class="ph-fill ph-microphone-stage text-primary fs-3 me-2"></i>
+                <h4 class="fw-black text-dark mb-0 fs-5 fs-sm-4 ms-1 ms-sm-0">FindYourVoice.</h4>
+            </a>
+            <h5 class="mb-0 fw-bold d-none d-lg-block">Parent Dashboard</h5>
+        </div>
+        
+        <div class="d-flex align-items-center gap-3">
+            <div class="d-none d-lg-flex align-items-center gap-3">
+                <button class="btn btn-outline-secondary border border-2 d-flex align-items-center justify-content-center p-2 rounded-circle" style="width: 36px; height: 36px;" id="theme-toggle" aria-label="Toggle Dark Mode"><i class="ph ph-moon fs-5"></i></button>
+                <button class="btn btn-outline-secondary border border-2 d-flex align-items-center justify-content-center p-2 rounded-circle" style="width: 36px; height: 36px;" id="rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right fs-5"></i></button>
+            </div>
+            
+            <button class="btn btn-link text-dark p-0 position-relative mx-2 text-decoration-none">
+                <i class="ph-fill ph-bell fs-4"></i>
+                <span class="position-absolute top-0 start-100 translate-middle p-1 bg-energy border border-light rounded-circle"></span>
+            </button>
+
+            <!-- Hamburger (mobile only) -->
+            <button class="btn btn-link text-dark d-lg-none p-0 ms-2 text-decoration-none" onclick="document.getElementById('dashboard-sidebar').classList.toggle('show')">
+                <i class="ph ph-list fs-3"></i>
+            </button>
+            
+            <div class="d-none d-lg-flex align-items-center gap-2 border-start border-light ps-3">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; font-weight: 600;">SJ</div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="fw-bold text-dark mb-0">Sarah Jenkins</span>
+                    <span class="badge bg-light text-muted border">Parent</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="dashboard-content p-4">
+        <div class="container-fluid tab-content" id="v-pills-tabContent">
+            
+            <!-- TAB OVERVIEW -->
+            <div class="tab-pane fade show active" id="tab-overview" role="tabpanel" aria-labelledby="tab-overview-tab">
+                <div class="row g-4 mb-4">
+                    <!-- WIDGET 1: Child Profile -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="premium-card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="fw-bold text-muted mb-0">Active Student</h6>
+                                <span class="badge bg-soft-green text-secondary rounded-pill">Age 12</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fs-3" style="width: 60px; height: 60px;">M</div>
+                                <div>
+                                    <h4 class="fw-bold mb-1">Marcus Jenkins</h4>
+                                    <p class="text-muted mb-0 small">Emerging Leaders Program</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WIDGET 4: Enrollment Status -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="premium-card p-4 bg-primary text-white border-0 h-100">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="fw-bold text-white opacity-75 mb-0">Current Session</h6>
+                                <i class="ph-fill ph-calendar-check fs-3"></i>
+                            </div>
+                            <h4 class="fw-bold text-white mb-1">Summer Camp '26</h4>
+                            <p class="text-white opacity-75 mb-3 small">Status: Active Enrolled</p>
+                            <div class="progress bg-white bg-opacity-25" style="height: 6px;">
+                                <div class="progress-bar bg-white" style="width: 60%;"></div>
+                            </div>
+                            <small class="text-white opacity-75 mt-2 d-block">Week 4 of 6 Completed</small>
+                        </div>
+                    </div>
+
+                    <!-- WIDGET 3: Upcoming Session -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="premium-card p-4 bg-warm-bg border-0 h-100">
+                            <h5 class="fw-bold mb-4">Next Session</h5>
+                            <div class="bg-white p-3 rounded-3 shadow-sm mb-3">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-soft-blue text-primary">Tomorrow</span>
+                                    <small class="text-muted fw-bold">10:00 AM</small>
+                                </div>
+                                <h6 class="fw-bold mb-1">Impromptu Speaking</h6>
+                                <p class="text-muted small mb-0"><i class="ph-fill ph-map-pin me-1"></i> Room 204, Main Hall</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB PROGRESS -->
+            <div class="tab-pane fade" id="tab-progress" role="tabpanel" aria-labelledby="tab-progress-tab">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="premium-card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5 class="fw-bold mb-0">Skill Development <span class="badge bg-light text-muted ms-2 border">Demo Data</span></h5>
+                            </div>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="small fw-bold">Confidence</span>
+                                            <span class="small text-muted">80%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-primary skill-progress-fill" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="small fw-bold">Public Speaking</span>
+                                            <span class="small text-muted">75%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-secondary skill-progress-fill" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="small fw-bold">Leadership</span>
+                                            <span class="small text-muted">60%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-accent skill-progress-fill" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="small fw-bold">Teamwork</span>
+                                            <span class="small text-muted">90%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-energy skill-progress-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-top border-light text-center">
+                                <p class="text-muted small mb-0">Mentor feedback updated 2 days ago.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- WIDGET 6: Payment Status -->
+                    <div class="col-lg-4">
+                        <div class="premium-card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="fw-bold text-muted mb-0">Outstanding Balance</h6>
+                                <i class="ph-fill ph-receipt fs-3 text-energy"></i>
+                            </div>
+                            <h3 class="fw-bold mb-1">$0.00</h3>
+                            <p class="text-muted mb-4 small">Fully Paid</p>
+                            <button class="btn btn-outline-custom btn-sm w-100">Download Receipts</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB SETTINGS -->
+            <div class="tab-pane fade" id="tab-settings" role="tabpanel" aria-labelledby="tab-settings-tab">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="premium-card p-4">
+                            <h5 class="fw-bold mb-4">Account Settings</h5>
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Parent Name</label>
+                                <input type="text" class="form-control" value="Sarah Jenkins">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Email Address</label>
+                                <input type="email" class="form-control" value="sarah.jenkins@example.com">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label text-muted small fw-bold">Phone Number</label>
+                                <input type="text" class="form-control" value="(555) 123-4567">
+                            </div>
+                            <button class="btn btn-primary-custom w-100">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script>
+        function closeSidebarMobile() {
+            if(window.innerWidth < 992) {
+                document.getElementById('dashboard-sidebar').classList.remove('show');
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
