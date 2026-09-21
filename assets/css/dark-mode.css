@@ -214,3 +214,14 @@ body.dark-mode .topbar a > i.text-primary {
     color: #FFFFFF !important;
 }
 
+/* Button hover text color in dark mode */
+body.dark-mode .btn-primary-custom:hover {
+    color: var(--primary) !important;
+}
+
+/* Fix missing borders on textareas, inputs, and accordion items in dark mode */
+body.dark-mode textarea.form-control.border-0,
+body.dark-mode input.form-control.border-0,
+body.dark-mode .accordion-item.border-0 {
+    border: 1px solid var(--border) !important;
+}
