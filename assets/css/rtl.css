@@ -25,15 +25,45 @@ html[dir="rtl"] .me-auto {
     margin-right: 0 !important;
 }
 
-html[dir="rtl"] .ms-2 { margin-left: 0 !important; margin-right: 0.5rem !important; }
-html[dir="rtl"] .ms-3 { margin-left: 0 !important; margin-right: 1rem !important; }
-html[dir="rtl"] .ms-4 { margin-left: 0 !important; margin-right: 1.5rem !important; }
-html[dir="rtl"] .ms-5 { margin-left: 0 !important; margin-right: 3rem !important; }
+html[dir="rtl"] .ms-2 {
+    margin-left: 0 !important;
+    margin-right: 0.5rem !important;
+}
 
-html[dir="rtl"] .me-2 { margin-right: 0 !important; margin-left: 0.5rem !important; }
-html[dir="rtl"] .me-3 { margin-right: 0 !important; margin-left: 1rem !important; }
-html[dir="rtl"] .me-4 { margin-right: 0 !important; margin-left: 2rem !important; }
-html[dir="rtl"] .me-5 { margin-right: 0 !important; margin-left: 3rem !important; }
+html[dir="rtl"] .ms-3 {
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
+}
+
+html[dir="rtl"] .ms-4 {
+    margin-left: 0 !important;
+    margin-right: 1.5rem !important;
+}
+
+html[dir="rtl"] .ms-5 {
+    margin-left: 0 !important;
+    margin-right: 3rem !important;
+}
+
+html[dir="rtl"] .me-2 {
+    margin-right: 0 !important;
+    margin-left: 0.5rem !important;
+}
+
+html[dir="rtl"] .me-3 {
+    margin-right: 0 !important;
+    margin-left: 1rem !important;
+}
+
+html[dir="rtl"] .me-4 {
+    margin-right: 0 !important;
+    margin-left: 2rem !important;
+}
+
+html[dir="rtl"] .me-5 {
+    margin-right: 0 !important;
+    margin-left: 3rem !important;
+}
 
 html[dir="rtl"] .pe-3 {
     padding-left: 1rem !important;
@@ -64,6 +94,40 @@ html[dir="rtl"] .accordion-body {
 html[dir='rtl'] .text-lg-start {
     text-align: right !important;
 }
+
 html[dir='rtl'] .justify-content-lg-start {
     justify-content: flex-start !important;
+}
+
+/* Home page 1 Learn by Doing button alignment */
+html[dir='rtl'] .text-md-end {
+    text-align: left !important;
+}
+
+/* Dashboard settings dropdown alignment in RTL */
+html[dir='rtl'] .form-select {
+    background-position: left 0.75rem center;
+    padding-right: 0.75rem;
+    padding-left: 2.25rem;
+}
+/* Home page 2 Learn by Doing button alignment */
+html[dir='rtl'] .text-lg-end {
+    text-align: left !important;
+}
+
+/* Authentication pages left side space for icon */
+html[dir='rtl'] .auth-page .form-control {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+}
+
+/* Flip positioning in RTL */
+html[dir='rtl'] .start-0 {
+    left: auto !important;
+    right: 0 !important;
+}
+
+html[dir='rtl'] .end-0 {
+    right: auto !important;
+    left: 0 !important;
 }

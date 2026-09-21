@@ -13,16 +13,16 @@ body.dark-mode {
     --text: #F3F7F8;
     --muted: #AEBBC1;
     --border: rgba(243, 247, 248, 0.10);
-    
+
     background-color: var(--bg);
     color: var(--text);
 }
 
-body.dark-mode h1, 
-body.dark-mode h2, 
-body.dark-mode h3, 
-body.dark-mode h4, 
-body.dark-mode h5, 
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
 body.dark-mode h6 {
     color: var(--dark) !important;
 }
@@ -56,7 +56,7 @@ body.dark-mode .section-soft-blue {
 body.dark-mode .bg-white,
 body.dark-mode .bg-light,
 body.dark-mode footer.bg-white {
-    background-color: var(--bg) !important;
+    background-color: var(--white) !important;
     color: var(--text) !important;
 }
 
@@ -80,7 +80,8 @@ body.dark-mode .section {
 /* Authentication Page & Inputs */
 body.dark-mode input.form-control,
 body.dark-mode input.form-control.bg-light {
-    background-color: var(--white) !important; /* Maps to #152630 */
+    background-color: var(--white) !important;
+    /* Maps to #152630 */
     color: var(--text) !important;
     border: 1px solid var(--border) !important;
 }
@@ -104,7 +105,7 @@ body.dark-mode .navbar-brand .text-primary {
 body.dark-mode.auth-page,
 body.dark-mode.auth-page .bg-white,
 body.dark-mode.auth-page .bg-light {
-    background-color: var(--bg) !important;
+    background-color: var(--white) !important;
 }
 
 body.dark-mode.auth-page .text-muted,
@@ -133,14 +134,14 @@ body.dark-mode.auth-page .btn-primary-custom * {
 }
 
 body.dark-mode.auth-page .btn-outline-secondary {
-    border-color: rgba(255,255,255,0.2) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 body.dark-mode.auth-page input.form-control,
 body.dark-mode.auth-page input.form-control.bg-light {
-    background-color: rgba(255,255,255,0.05) !important; 
+    background-color: rgba(255, 255, 255, 0.05) !important;
     color: #FFFFFF !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 body.dark-mode.auth-page input.form-control::placeholder {
@@ -148,7 +149,7 @@ body.dark-mode.auth-page input.form-control::placeholder {
 }
 
 body.dark-mode.auth-page .border-light {
-    border-color: rgba(255,255,255,0.1) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 body.dark-mode .accordion-button,
@@ -156,16 +157,20 @@ body.dark-mode .accordion-body {
     background-color: var(--white) !important;
     color: var(--text) !important;
 }
+
 body.dark-mode .accordion-item {
     border-color: var(--border) !important;
 }
+
 body.dark-mode .accordion-button:not(.collapsed) {
-    background-color: var(--bg) !important;
+    background-color: var(--white) !important;
     color: #FFFFFF !important;
 }
+
 body.dark-mode .accordion-button::after {
     filter: invert(1) brightness(2) !important;
 }
+
 body.dark-mode label,
 body.dark-mode .form-label {
     color: var(--text) !important;
@@ -177,7 +182,35 @@ body.dark-mode textarea.form-control {
     color: var(--text) !important;
     border-color: var(--border) !important;
 }
+
 body.dark-mode input.form-control::placeholder,
 body.dark-mode textarea.form-control::placeholder {
     color: var(--muted) !important;
 }
+
+/* Footer link hover in dark mode */
+body.dark-mode footer a:hover, body.dark-mode footer a.text-muted:hover, body.dark-mode footer.bg-white a:hover {
+    color: var(--energy) !important;
+}
+
+/* Contact page icon hover in dark mode */
+body.dark-mode .icon-hover:hover i,
+body.dark-mode .icon-hover:hover {
+    color: var(--primary) !important;
+}
+
+/* Dashboard sidebar hover in dark mode */
+body.dark-mode .sidebar-link:hover,
+body.dark-mode .sidebar-link.active {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+}
+
+/* Dashboard logo white in dark mode */
+body.dark-mode .dashboard-sidebar a > h4.text-dark,
+body.dark-mode .topbar a > h4.text-dark,
+body.dark-mode .dashboard-sidebar a > i.text-primary,
+body.dark-mode .topbar a > i.text-primary {
+    color: #FFFFFF !important;
+}
+

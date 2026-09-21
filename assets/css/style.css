@@ -311,7 +311,7 @@ footer a {
     transition: color 0.3s ease;
 }
 
-footer a:hover {
+footer a:hover, footer a.text-muted:hover {
     color: var(--primary) !important;
 }
 
@@ -390,25 +390,13 @@ html[dir='rtl'] body {
 }
 
 /* Dark mode button hover states */
-body.dark-mode .btn-outline-custom:hover,
-body.dark-mode .btn-primary-custom:hover,
-body.dark-mode .btn-secondary-custom:hover,
-body.dark-mode .btn-outline-custom:hover,
-body.dark-mode .btn-outline-secondary:hover {
-    background-color: var(--accent) !important;
-    border-color: var(--accent) !important;
+
     color: var(--dark) !important; }
 
-
-
-
-    
-    /* Enforce white hamburger icon on all pages on mobile view */
-    .navbar-toggler i {
-        color: #ffffff !important; }
+/* Enforce black hamburger icon in light mode */
+.navbar-toggler i {
+    color: #000000 !important; 
 }
-
-
 
 /* Ensure responsive width classes work properly for Home 2 hero layout */
 @media (min-width: 992px) {
@@ -437,6 +425,13 @@ body.dark-mode footer h4.text-dark {
 body.dark-mode footer h4.text-dark i,
 body.dark-mode footer h4.text-dark {
     color: #ffffff !important;
+}
+
+
+
+/* Footer links hover yellow in both modes */
+footer a:hover, footer a.text-muted:hover {
+    color: var(--energy) !important;
 }
 
 
