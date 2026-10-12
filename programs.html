@@ -79,7 +79,7 @@
     </nav>
 
     <!-- 1. HERO -->
-    <section class="section-padding mt-5 pt-5 pb-5 fade-up"
+    <section class="section-padding mt-5 pt-5 pb-5 fade-up page-hero-standard"
         style="background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('assets/images/programs-hero.jpg') center/cover; min-height: 40vh; display: flex; align-items: center;">
         <div class="container text-center py-5">
             <div
@@ -201,13 +201,17 @@
             <h2 class="display-5 fw-bold mb-4 text-white">Ready to unlock their potential?</h2>
             <p class="fs-5 text-white opacity-75 max-w-700 mx-auto mb-5">Spots are filling up quickly for our upcoming summer
                 and fall sessions.</p>
-            <a href="enrollment.html" class="btn btn-primary-custom btn-premium"
+            <a href="contact.html" class="btn btn-primary-custom btn-premium"
                 style="background-color: var(--accent); color: var(--dark);">Enroll Now</a>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-white text-dark border-top pt-5 pb-4">
+    
+<section class="section section-soft"><div class="container"><div class="text-center section-heading mx-auto"><span class="eyebrow">PROGRAM DETAILS</span><h2 class="display-6 fw-bold mt-2">Designed for ages 14–17</h2><p>Activities are adapted to each learner’s experience, interests and confidence level.</p></div><div class="row g-4 mt-3"><div class="col-md-6"><article class="journey-card h-100"><h3>What you’ll learn</h3><ul class="mb-0"><li>Organise ideas into a clear message</li><li>Use voice, pace and body language</li><li>Speak to a group and handle questions</li><li>Collaborate, listen and lead a team</li><li>Reflect on feedback and set goals</li></ul></article></div><div class="col-md-6"><article class="journey-card h-100"><h3>Who can join?</h3><p>Students who want to feel more comfortable speaking in class, sharing ideas, presenting projects or taking on leadership roles. Previous public-speaking experience is not required.</p><a href="contact.html">Ask about suitability <i class="ph-bold ph-arrow-right"></i></a></article></div></div></div></section>
+<section class="section"><div class="container"><div class="text-center section-heading mx-auto"><span class="eyebrow">HOW IT WORKS</span><h2 class="display-6 fw-bold mt-2">A structured path from practice to presentation</h2></div><div class="row g-4 mt-3"><div class="col-md-3"><article class="journey-card h-100"><span>01</span><h3>Discover</h3><p>Set goals and learn the foundations of clear communication.</p></article></div><div class="col-md-3"><article class="journey-card h-100"><span>02</span><h3>Practise</h3><p>Try short talks, storytelling and small-group activities.</p></article></div><div class="col-md-3"><article class="journey-card h-100"><span>03</span><h3>Collaborate</h3><p>Work through team challenges and constructive feedback.</p></article></div><div class="col-md-3"><article class="journey-card h-100"><span>04</span><h3>Present</h3><p>Share a final message and reflect on progress.</p></article></div></div><div class="accordion mt-5" id="programFaq"><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#programFaq1">Does my child need public-speaking experience?</button></h3><div id="programFaq1" class="accordion-collapse collapse show" data-bs-parent="#programFaq"><div class="accordion-body">No. Sessions start with approachable activities and build gradually.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#programFaq2">How do we choose a suitable program?</button></h3><div id="programFaq2" class="accordion-collapse collapse" data-bs-parent="#programFaq"><div class="accordion-body">Review the program descriptions and contact us with your child’s age and goals for guidance.</div></div></div></div></div></section>
+
+<footer class="bg-white text-dark border-top pt-5 pb-4">
         <div class="container">
             <div class="row g-4 mb-5">
                 <div class="col-xl-4 col-lg-6 col-md-6">
@@ -232,10 +236,10 @@
                 <div class="col-xl-3 col-lg-6 col-md-6">
                     <h5 class="text-dark fw-bold mb-4">Parent Resources</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="schedule.html" class="text-muted text-decoration-none">Schedule</a>
+                        <li class="mb-2"><a href="camp-experience.html" class="text-muted text-decoration-none">Schedule</a>
                         </li>
-                        <li class="mb-2"><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
-                        <li class="mb-2"><a href="testimonials.html"
+                        <li class="mb-2"><a href="programs.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="about.html"
                                 class="text-muted text-decoration-none">Testimonials</a></li>
                         <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a>
                         </li>
@@ -272,6 +276,21 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const current = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.navbar-premium a[href]').forEach(function(link) {
+    const href = link.getAttribute('href');
+    if (href === current) {
+      link.setAttribute('aria-current', 'page');
+      link.classList.add('active');
+      const dropdown = link.closest('.dropdown');
+      if (dropdown) dropdown.querySelector('.dropdown-toggle')?.classList.add('active');
+    }
+  });
+});
+</script>
 </body>
 
 </html>

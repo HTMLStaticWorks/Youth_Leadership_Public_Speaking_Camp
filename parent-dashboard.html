@@ -160,14 +160,25 @@
                 onclick="closeSidebarMobile()">
                 <i class="ph-fill ph-chart-line-up fs-5"></i> Progress
             </button>
+            <button class="sidebar-link nav-link" id="tab-schedule-tab" data-bs-toggle="pill"
+                data-bs-target="#tab-schedule" type="button" role="tab" aria-selected="false"
+                onclick="closeSidebarMobile()">
+                <i class="ph-fill ph-calendar-blank fs-5"></i> Schedule
+            </button>
+            <button class="sidebar-link nav-link" id="tab-resources-tab" data-bs-toggle="pill"
+                data-bs-target="#tab-resources" type="button" role="tab" aria-selected="false"
+                onclick="closeSidebarMobile()">
+                <i class="ph-fill ph-book-open fs-5"></i> Resources
+            </button>
             <button class="sidebar-link nav-link" id="tab-settings-tab" data-bs-toggle="pill"
                 data-bs-target="#tab-settings" type="button" role="tab" aria-selected="false"
                 onclick="closeSidebarMobile()">
                 <i class="ph-fill ph-gear fs-5"></i> Settings
             </button>
 
-            <a href="index.html" class="sidebar-link text-danger mt-4"><i class="ph-fill ph-sign-out fs-5"></i>
-                Logout</a>
+            <small class="text-muted text-uppercase fw-bold mt-4 mb-2 px-3" style="font-size: 0.75rem;">Support</small>
+            <a href="contact.html" class="sidebar-link"><i class="ph-fill ph-headset fs-5"></i> Help &amp; Support</a>
+            <a href="index.html" class="sidebar-link text-danger mt-2"><i class="ph-fill ph-sign-out fs-5"></i> Logout</a>
 
             <div class="d-lg-none border-top border-light pt-4 mt-4 px-2">
                 <div class="d-flex align-items-center justify-content-start gap-3 mb-3 ms-2">
@@ -178,8 +189,7 @@
                     <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center flex-shrink-0"
                         style="width: 40px; height: 40px; font-weight: 600;">SJ</div>
                     <div class="d-flex flex-column">
-                        <span class="fw-bold text-dark mb-0 text-truncate" style="max-width: 150px;">Sarah
-                            Jenkins</span>
+                        <span class="fw-bold text-dark mb-0 text-truncate" style="max-width: 150px;">Sarah Jenkins</span>
                         <small class="text-muted">Parent</small>
                     </div>
                 </div>
@@ -238,26 +248,51 @@
 
             <!-- TAB OVERVIEW -->
             <div class="tab-pane fade show active" id="tab-overview" role="tabpanel" aria-labelledby="tab-overview-tab">
+
+                <!-- Welcome Header -->
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                    <div>
+                        <h4 class="fw-bold mb-1">Welcome back, Sarah! 👋</h4>
+                        <p class="text-muted mb-0">Here's a summary of Marcus's progress and upcoming activities.</p>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary-custom"><i class="ph-fill ph-headset me-2"></i>Contact the Team</a>
+                </div>
+
+                <!-- Top Widgets Row -->
                 <div class="row g-4 mb-4">
-                    <!-- WIDGET 1: Child Profile -->
+                    <!-- Child Profile -->
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="premium-card p-4 h-100">
                             <div class="d-flex justify-content-between align-items-start mb-3">
                                 <h6 class="fw-bold text-muted mb-0">Active Student</h6>
                                 <span class="badge bg-soft-green text-secondary rounded-pill">Age 12</span>
                             </div>
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fs-3"
-                                    style="width: 60px; height: 60px;">M</div>
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fs-3 flex-shrink-0"
+                                    style="width: 60px; height: 60px; font-weight:700;">M</div>
                                 <div>
-                                    <h4 class="fw-bold mb-1">Marcus Jenkins</h4>
+                                    <h5 class="fw-bold mb-1">Marcus Jenkins</h5>
                                     <p class="text-muted mb-0 small">Emerging Leaders Program</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 pt-3 border-top border-light">
+                                <div class="text-center flex-fill">
+                                    <div class="fw-bold text-primary fs-5">12</div>
+                                    <small class="text-muted">Sessions</small>
+                                </div>
+                                <div class="text-center flex-fill">
+                                    <div class="fw-bold text-secondary fs-5">4</div>
+                                    <small class="text-muted">Badges</small>
+                                </div>
+                                <div class="text-center flex-fill">
+                                    <div class="fw-bold text-energy fs-5">A+</div>
+                                    <small class="text-muted">Rank</small>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- WIDGET 4: Enrollment Status -->
+                    <!-- Enrollment Status -->
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="premium-card p-4 bg-primary text-white border-0 h-100">
                             <div class="d-flex justify-content-between align-items-start mb-3">
@@ -265,42 +300,139 @@
                                 <i class="ph-fill ph-calendar-check fs-3"></i>
                             </div>
                             <h4 class="fw-bold text-white mb-1">Summer Camp '26</h4>
-                            <p class="text-white opacity-75 mb-3 small">Status: Active Enrolled</p>
-                            <div class="progress bg-white bg-opacity-25" style="height: 6px;">
+                            <p class="text-white opacity-75 mb-3 small">Status: <strong>Active &amp; Enrolled</strong></p>
+                            <div class="progress bg-white bg-opacity-25 mb-2" style="height: 8px;">
                                 <div class="progress-bar bg-white" style="width: 60%;"></div>
                             </div>
-                            <small class="text-white opacity-75 mt-2 d-block">Week 4 of 6 Completed</small>
+                            <small class="text-white opacity-75 d-block mb-3">Week 4 of 6 Completed</small>
+                            <div class="d-flex gap-2">
+                                <a href="curriculum.html" class="btn btn-light btn-sm flex-fill fw-bold text-primary">View Curriculum</a>
+                                <a href="programs.html" class="btn btn-outline-light btn-sm flex-fill">Programs</a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- WIDGET 3: Upcoming Session -->
-                    <div class="col-lg-4 col-md-12">
-                        <div class="premium-card p-4 bg-warm-bg border-0 h-100">
-                            <h5 class="fw-bold mb-4">Next Session</h5>
-                            <div class="bg-white p-3 rounded-3 shadow-sm mb-3">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <span class="badge bg-soft-blue text-primary">Tomorrow</span>
-                                    <small class="text-muted fw-bold">10:00 AM</small>
+                    <!-- Upcoming Session -->
+                    <div class="col-xl-4 col-lg-12">
+                        <div class="premium-card p-4 h-100">
+                            <h6 class="fw-bold text-muted mb-3">Upcoming Sessions</h6>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="p-3 rounded-3 border border-light">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="badge bg-soft-blue text-primary">Tomorrow</span>
+                                        <small class="text-muted fw-bold">10:00 AM</small>
+                                    </div>
+                                    <h6 class="fw-bold mb-1">Impromptu Speaking</h6>
+                                    <p class="text-muted small mb-0"><i class="ph-fill ph-map-pin me-1"></i>Room 204, Main Hall</p>
                                 </div>
-                                <h6 class="fw-bold mb-1">Impromptu Speaking</h6>
-                                <p class="text-muted small mb-0"><i class="ph-fill ph-map-pin me-1"></i> Room 204, Main
-                                    Hall</p>
+                                <div class="p-3 rounded-3 border border-light">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="badge bg-light text-muted border">Thu, Oct 15</span>
+                                        <small class="text-muted fw-bold">2:00 PM</small>
+                                    </div>
+                                    <h6 class="fw-bold mb-1">Group Debate Workshop</h6>
+                                    <p class="text-muted small mb-0"><i class="ph-fill ph-map-pin me-1"></i>Auditorium A</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Growth Plan Section (was previously broken / outside body) -->
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-8">
+                        <div class="premium-card p-4 h-100">
+                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
+                                <div>
+                                    <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 0.08em;">Family Overview</small>
+                                    <h5 class="fw-bold mt-1 mb-1">Your Child's Growth Plan</h5>
+                                    <p class="text-muted mb-0 small">A practical snapshot to help you stay connected with camp.</p>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="dashboard-mini-stat">
+                                        <i class="ph ph-calendar-check fs-3 text-primary"></i>
+                                        <h6 class="fw-bold mt-2 mb-1">Upcoming Sessions</h6>
+                                        <p class="small text-muted mb-0">Review the schedule and plan ahead for each week.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="dashboard-mini-stat">
+                                        <i class="ph ph-chat-circle-text fs-3 text-primary"></i>
+                                        <h6 class="fw-bold mt-2 mb-1">Mentor Feedback</h6>
+                                        <p class="small text-muted mb-0">Use feedback to guide meaningful conversations at home.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="dashboard-mini-stat">
+                                        <i class="ph ph-target fs-3 text-primary"></i>
+                                        <h6 class="fw-bold mt-2 mb-1">Learning Goals</h6>
+                                        <p class="small text-muted mb-0">Encourage one small speaking goal with your child each week.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="premium-card p-4 h-100">
+                            <h5 class="fw-bold mb-2">Helpful Next Steps</h5>
+                            <p class="text-muted small mb-3">Make the most of the camp experience with these family actions.</p>
+                            <ul class="dashboard-action-list text-muted small">
+                                <li>Ask your child what felt easier this week.</li>
+                                <li>Practise a two-minute story together.</li>
+                                <li>Celebrate effort, not just performance.</li>
+                                <li>Read the mentor feedback together after each session.</li>
+                            </ul>
+                            <a href="camp-experience.html" class="btn btn-outline-custom w-100 mt-3 btn-sm">Explore Camp Activities</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats Row -->
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <div class="premium-card p-3 text-center">
+                            <i class="ph-fill ph-star fs-2 text-energy mb-1"></i>
+                            <div class="fw-bold fs-4">92<small class="fs-6 text-muted">%</small></div>
+                            <small class="text-muted">Attendance Rate</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="premium-card p-3 text-center">
+                            <i class="ph-fill ph-microphone-stage fs-2 text-primary mb-1"></i>
+                            <div class="fw-bold fs-4">8</div>
+                            <small class="text-muted">Speeches Given</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="premium-card p-3 text-center">
+                            <i class="ph-fill ph-trophy fs-2 text-secondary mb-1"></i>
+                            <div class="fw-bold fs-4">3</div>
+                            <small class="text-muted">Awards Earned</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="premium-card p-3 text-center">
+                            <i class="ph-fill ph-users fs-2 text-accent mb-1"></i>
+                            <div class="fw-bold fs-4">14</div>
+                            <small class="text-muted">Peers Connected</small>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- TAB PROGRESS -->
             <div class="tab-pane fade" id="tab-progress" role="tabpanel" aria-labelledby="tab-progress-tab">
+                <h4 class="fw-bold mb-4">Skill Development Report</h4>
                 <div class="row g-4">
                     <div class="col-lg-8">
-                        <div class="premium-card p-4 h-100">
+                        <div class="premium-card p-4 mb-4">
                             <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h5 class="fw-bold mb-0">Skill Development <span
-                                        class="badge bg-light text-muted ms-2 border">Demo Data</span></h5>
+                                <h5 class="fw-bold mb-0">Core Skills <span class="badge bg-light text-muted ms-2 border">Demo Data</span></h5>
+                                <small class="text-muted">Updated 2 days ago</small>
                             </div>
-
                             <div class="row g-4">
                                 <div class="col-md-6">
                                     <div class="mb-3">
@@ -309,8 +441,7 @@
                                             <span class="small text-muted">80%</span>
                                         </div>
                                         <div class="progress" style="height: 8px;">
-                                            <div class="progress-bar bg-primary skill-progress-fill" style="width: 80%">
-                                            </div>
+                                            <div class="progress-bar bg-primary skill-progress-fill" style="width: 80%"></div>
                                         </div>
                                     </div>
                                     <div class="mb-3">
@@ -319,8 +450,16 @@
                                             <span class="small text-muted">75%</span>
                                         </div>
                                         <div class="progress" style="height: 8px;">
-                                            <div class="progress-bar bg-secondary skill-progress-fill"
-                                                style="width: 75%"></div>
+                                            <div class="progress-bar bg-secondary skill-progress-fill" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="small fw-bold">Critical Thinking</span>
+                                            <span class="small text-muted">68%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar skill-progress-fill" style="width:68%; background:#6aa7d8;"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -331,8 +470,7 @@
                                             <span class="small text-muted">60%</span>
                                         </div>
                                         <div class="progress" style="height: 8px;">
-                                            <div class="progress-bar bg-accent skill-progress-fill" style="width: 60%">
-                                            </div>
+                                            <div class="progress-bar bg-accent skill-progress-fill" style="width: 60%"></div>
                                         </div>
                                     </div>
                                     <div class="mb-3">
@@ -341,27 +479,193 @@
                                             <span class="small text-muted">90%</span>
                                         </div>
                                         <div class="progress" style="height: 8px;">
-                                            <div class="progress-bar bg-energy skill-progress-fill" style="width: 90%">
-                                            </div>
+                                            <div class="progress-bar bg-energy skill-progress-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="small fw-bold">Active Listening</span>
+                                            <span class="small text-muted">85%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar skill-progress-fill" style="width:85%; background:#234e70;"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-4 pt-3 border-top border-light text-center">
-                                <p class="text-muted small mb-0">Mentor feedback updated 2 days ago.</p>
+                        </div>
+                        <!-- Mentor Comments -->
+                        <div class="premium-card p-4">
+                            <h6 class="fw-bold mb-3">Latest Mentor Comment</h6>
+                            <div class="d-flex gap-3">
+                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width:42px;height:42px;font-weight:700;">JR</div>
+                                <div class="p-3 rounded-3 bg-soft-blue flex-fill">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="fw-bold small">James Robertson</span>
+                                        <small class="text-muted">2 days ago</small>
+                                    </div>
+                                    <p class="mb-0 small text-muted">Marcus showed exceptional growth in impromptu speaking this week. He structured his points clearly and maintained strong eye contact. Encourage him to slow down slightly when nervous — great progress overall!</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- WIDGET 6: Payment Status -->
                     <div class="col-lg-4">
-                        <div class="premium-card p-4 h-100">
+                        <div class="premium-card p-4 mb-4">
                             <div class="d-flex justify-content-between align-items-start mb-3">
                                 <h6 class="fw-bold text-muted mb-0">Outstanding Balance</h6>
                                 <i class="ph-fill ph-receipt fs-3 text-energy"></i>
                             </div>
                             <h3 class="fw-bold mb-1">$0.00</h3>
-                            <p class="text-muted mb-4 small">Fully Paid</p>
+                            <p class="text-muted mb-4 small">Fully Paid — Summer Camp '26</p>
                             <button class="btn btn-outline-custom btn-sm w-100">Download Receipts</button>
+                        </div>
+                        <div class="premium-card p-4">
+                            <h6 class="fw-bold mb-3">Achievement Badges</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-soft-green text-secondary px-3 py-2"><i class="ph-fill ph-star me-1"></i>First Speech</span>
+                                <span class="badge bg-soft-blue text-primary px-3 py-2"><i class="ph-fill ph-microphone me-1"></i>Stage Ready</span>
+                                <span class="badge bg-light text-muted border px-3 py-2"><i class="ph-fill ph-users me-1"></i>Team Player</span>
+                                <span class="badge bg-light text-muted border px-3 py-2"><i class="ph-fill ph-trophy me-1"></i>Debate Starter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB SCHEDULE -->
+            <div class="tab-pane fade" id="tab-schedule" role="tabpanel" aria-labelledby="tab-schedule-tab">
+                <h4 class="fw-bold mb-4">Session Schedule</h4>
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="premium-card p-4">
+                            <h6 class="fw-bold mb-4">Upcoming Sessions — Week 5</h6>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex align-items-center gap-3 p-3 rounded-3 border border-light">
+                                    <div class="text-center px-3 py-2 rounded-3 bg-soft-blue flex-shrink-0">
+                                        <div class="fw-bold text-primary">13</div>
+                                        <small class="text-muted" style="font-size:0.7rem;">OCT</small>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <h6 class="fw-bold mb-0">Impromptu Speaking</h6>
+                                        <small class="text-muted">10:00 AM – 11:30 AM · Room 204, Main Hall</small>
+                                    </div>
+                                    <span class="badge bg-soft-green text-secondary">Tomorrow</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 p-3 rounded-3 border border-light">
+                                    <div class="text-center px-3 py-2 rounded-3 bg-light flex-shrink-0">
+                                        <div class="fw-bold">15</div>
+                                        <small class="text-muted" style="font-size:0.7rem;">OCT</small>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <h6 class="fw-bold mb-0">Group Debate Workshop</h6>
+                                        <small class="text-muted">2:00 PM – 4:00 PM · Auditorium A</small>
+                                    </div>
+                                    <span class="badge bg-light text-muted border">Thu</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 p-3 rounded-3 border border-light">
+                                    <div class="text-center px-3 py-2 rounded-3 bg-light flex-shrink-0">
+                                        <div class="fw-bold">17</div>
+                                        <small class="text-muted" style="font-size:0.7rem;">OCT</small>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <h6 class="fw-bold mb-0">Leadership Simulation</h6>
+                                        <small class="text-muted">9:00 AM – 12:00 PM · Camp Hall B</small>
+                                    </div>
+                                    <span class="badge bg-light text-muted border">Sat</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 p-3 rounded-3 border border-light">
+                                    <div class="text-center px-3 py-2 rounded-3 bg-light flex-shrink-0">
+                                        <div class="fw-bold">19</div>
+                                        <small class="text-muted" style="font-size:0.7rem;">OCT</small>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <h6 class="fw-bold mb-0">Final Showcase Rehearsal</h6>
+                                        <small class="text-muted">3:00 PM – 5:00 PM · Main Stage</small>
+                                    </div>
+                                    <span class="badge bg-light text-muted border">Mon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="premium-card p-4">
+                            <h6 class="fw-bold mb-3">Session Summary</h6>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small">Total Sessions</span>
+                                    <span class="fw-bold">12</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small">Completed</span>
+                                    <span class="fw-bold text-secondary">8</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small">Upcoming</span>
+                                    <span class="fw-bold text-primary">4</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small">Absences</span>
+                                    <span class="fw-bold text-energy">1</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-top border-light">
+                                <a href="contact.html" class="btn btn-outline-custom w-100 btn-sm">Request a Session Change</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB RESOURCES -->
+            <div class="tab-pane fade" id="tab-resources" role="tabpanel" aria-labelledby="tab-resources-tab">
+                <h4 class="fw-bold mb-4">Learning Resources</h4>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="premium-card p-4 h-100">
+                            <div class="mb-3"><i class="ph-fill ph-file-text fs-2 text-primary"></i></div>
+                            <h6 class="fw-bold">Speaking Frameworks</h6>
+                            <p class="text-muted small mb-3">Downloadable guides on structuring impactful speeches and presentations.</p>
+                            <a href="curriculum.html" class="btn btn-outline-custom btn-sm w-100">View Guides</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="premium-card p-4 h-100">
+                            <div class="mb-3"><i class="ph-fill ph-video fs-2 text-secondary"></i></div>
+                            <h6 class="fw-bold">Video Recaps</h6>
+                            <p class="text-muted small mb-3">Short recap videos from each workshop to reinforce key lessons at home.</p>
+                            <a href="camp-experience.html" class="btn btn-outline-custom btn-sm w-100">Watch Recaps</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="premium-card p-4 h-100">
+                            <div class="mb-3"><i class="ph-fill ph-book-open fs-2 text-accent"></i></div>
+                            <h6 class="fw-bold">Parent Handbook</h6>
+                            <p class="text-muted small mb-3">Everything you need to support your child's journey through the program.</p>
+                            <a href="about.html" class="btn btn-outline-custom btn-sm w-100">Read Handbook</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="premium-card p-4 h-100">
+                            <div class="mb-3"><i class="ph-fill ph-chats fs-2 text-primary"></i></div>
+                            <h6 class="fw-bold">Conversation Starters</h6>
+                            <p class="text-muted small mb-3">Prompts to spark meaningful discussion about each week's topic with your child.</p>
+                            <button class="btn btn-outline-custom btn-sm w-100">Download PDF</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="premium-card p-4 h-100">
+                            <div class="mb-3"><i class="ph-fill ph-calendar-blank fs-2 text-secondary"></i></div>
+                            <h6 class="fw-bold">Full Program Schedule</h6>
+                            <p class="text-muted small mb-3">The complete week-by-week schedule for the Emerging Leaders program.</p>
+                            <button class="btn btn-outline-custom btn-sm w-100">Download Schedule</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="premium-card p-4 h-100">
+                            <div class="mb-3"><i class="ph-fill ph-question fs-2 text-energy"></i></div>
+                            <h6 class="fw-bold">FAQs for Parents</h6>
+                            <p class="text-muted small mb-3">Answers to the most common questions parents ask about camp logistics and goals.</p>
+                            <a href="contact.html" class="btn btn-outline-custom btn-sm w-100">Read FAQs</a>
                         </div>
                     </div>
                 </div>
@@ -369,10 +673,11 @@
 
             <!-- TAB SETTINGS -->
             <div class="tab-pane fade" id="tab-settings" role="tabpanel" aria-labelledby="tab-settings-tab">
+                <h4 class="fw-bold mb-4">Account Settings</h4>
                 <div class="row g-4">
                     <div class="col-lg-6">
-                        <div class="premium-card p-4">
-                            <h5 class="fw-bold mb-4">Account Settings</h5>
+                        <div class="premium-card p-4 mb-4">
+                            <h5 class="fw-bold mb-4">Personal Information</h5>
                             <div class="mb-3">
                                 <label class="form-label text-muted small fw-bold">Parent Name</label>
                                 <input type="text" class="form-control" value="Sarah Jenkins">
@@ -386,6 +691,55 @@
                                 <input type="text" class="form-control" value="(555) 123-4567">
                             </div>
                             <button class="btn btn-primary-custom w-100">Save Changes</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="premium-card p-4 mb-4">
+                            <h5 class="fw-bold mb-4">Child Information</h5>
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Child's Name</label>
+                                <input type="text" class="form-control" value="Marcus Jenkins">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Date of Birth</label>
+                                <input type="date" class="form-control" value="2014-03-15">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label text-muted small fw-bold">Enrolled Program</label>
+                                <input type="text" class="form-control" value="Emerging Leaders Program" readonly>
+                            </div>
+                            <button class="btn btn-outline-custom w-100">Request Program Change</button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="premium-card p-4">
+                            <h5 class="fw-bold mb-3">Notification Preferences</h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="notif-email" checked>
+                                        <label class="form-check-label" for="notif-email">Email session reminders</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="notif-sms" checked>
+                                        <label class="form-check-label" for="notif-sms">SMS alerts for schedule changes</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="notif-feedback">
+                                        <label class="form-check-label" for="notif-feedback">Mentor feedback notifications</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="notif-news" checked>
+                                        <label class="form-check-label" for="notif-news">Camp news &amp; updates</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -404,6 +758,7 @@
             }
         }
     </script>
+
 </body>
 
 </html>

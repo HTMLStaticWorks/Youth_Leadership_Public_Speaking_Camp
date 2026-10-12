@@ -126,7 +126,7 @@
                     </p>
                     <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
                         <a href="programs.html" class="btn btn-primary-custom btn-premium">Explore Programs</a>
-                        <a href="enrollment.html" class="btn btn-outline-custom btn-premium">Enroll Your Child</a>
+                        <a href="contact.html" class="btn btn-outline-custom btn-premium">Enroll Your Child</a>
                     </div>
                 </div>
                 <div class="col-lg-6 position-relative fade-up" style="transition-delay: 0.2s;">
@@ -346,14 +346,18 @@
                 Explore the right program and take the first step toward a stronger, more confident communicator.
             </p>
             <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                <a href="enrollment.html" class="btn btn-primary-custom btn-premium"
+                <a href="contact.html" class="btn btn-primary-custom btn-premium"
                     style="background-color: var(--accent); color: var(--dark);">Enroll Now</a>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-white text-dark border-top pt-5 pb-4">
+    
+<section class="section section-soft voice-journey"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-6"><span class="eyebrow">THE FINDYOURVOICE METHOD</span><h2 class="display-6 fw-bold mt-2">Small practice. Real-world confidence.</h2><p class="lead">Students learn to organise their thoughts, speak with clarity, listen with empathy and lead with purpose. Every activity turns practice into a skill they can use at school and beyond.</p><a href="curriculum.html" class="btn btn-primary-custom mt-2">Explore the curriculum <i class="ph-bold ph-arrow-right ms-2"></i></a></div><div class="col-lg-6"><img src="assets/images/learn3.jpg" alt="Students practising confident communication in a guided activity" class="img-fluid rounded-4 shadow-sm w-100 journey-image"></div></div></div></section>
+<section class="section"><div class="container"><div class="text-center mx-auto section-heading"><span class="eyebrow">A CLEAR PATH FOR PARENTS</span><h2 class="display-6 fw-bold mt-2">From first hello to confident presentation</h2><p>Understand what happens before, during and after camp.</p></div><div class="row g-4 mt-3"><div class="col-md-4"><article class="journey-card h-100"><span>01</span><h3>Choose a program</h3><p>Explore the age-appropriate options and find the right starting point for your child.</p><a href="programs.html">Compare programs <i class="ph-bold ph-arrow-up-right"></i></a></article></div><div class="col-md-4"><article class="journey-card h-100"><span>02</span><h3>Learn by doing</h3><p>Practise storytelling, presentations, collaboration and leadership in supportive activities.</p><a href="camp-experience.html">See camp life <i class="ph-bold ph-arrow-up-right"></i></a></article></div><div class="col-md-4"><article class="journey-card h-100"><span>03</span><h3>Celebrate progress</h3><p>Reflect on new skills and carry practical communication tools into everyday life.</p><a href="about.html">Our approach <i class="ph-bold ph-arrow-up-right"></i></a></article></div></div></div></section>
+
+<footer class="bg-white text-dark border-top pt-5 pb-4">
         <div class="container">
             <div class="row g-4 mb-5">
                 <div class="col-xl-4 col-lg-6 col-md-6">
@@ -378,10 +382,10 @@
                 <div class="col-xl-3 col-lg-6 col-md-6">
                     <h5 class="text-dark fw-bold mb-4">Parent Resources</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="schedule.html" class="text-muted text-decoration-none">Schedule</a>
+                        <li class="mb-2"><a href="camp-experience.html" class="text-muted text-decoration-none">Schedule</a>
                         </li>
-                        <li class="mb-2"><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
-                        <li class="mb-2"><a href="testimonials.html"
+                        <li class="mb-2"><a href="programs.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="about.html"
                                 class="text-muted text-decoration-none">Testimonials</a></li>
                         <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a>
                         </li>
@@ -422,6 +426,21 @@
 
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const current = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.navbar-premium a[href]').forEach(function(link) {
+    const href = link.getAttribute('href');
+    if (href === current) {
+      link.setAttribute('aria-current', 'page');
+      link.classList.add('active');
+      const dropdown = link.closest('.dropdown');
+      if (dropdown) dropdown.querySelector('.dropdown-toggle')?.classList.add('active');
+    }
+  });
+});
+</script>
 </body>
 
 </html>
