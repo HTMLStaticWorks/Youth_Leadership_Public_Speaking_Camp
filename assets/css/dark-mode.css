@@ -225,3 +225,14 @@ body.dark-mode input.form-control.border-0,
 body.dark-mode .accordion-item.border-0 {
     border: 1px solid var(--border) !important;
 }
+
+
+/* Dark theme contrast and section separation fixes */
+[data-theme="dark"] .section-soft, body.dark-mode .section-soft, html.dark-mode .section-soft { background:#142632 !important; }
+[data-theme="dark"] .journey-card, body.dark-mode .journey-card, html.dark-mode .journey-card { background:#1b303d !important; color:#eef5f8; border-color:#395363; }
+[data-theme="dark"] .journey-card h3, [data-theme="dark"] .journey-card p, body.dark-mode .journey-card h3, body.dark-mode .journey-card p, html.dark-mode .journey-card h3, html.dark-mode .journey-card p { color:#eef5f8; }
+[data-theme="dark"] .journey-card a, body.dark-mode .journey-card a, html.dark-mode .journey-card a { color:#9fd2ff; }
+[data-theme="dark"] .child-age-field, body.dark-mode .child-age-field, html.dark-mode .child-age-field { background-color:#172a35 !important; color:#f4f8fa !important; border:1px solid #9eb4c2 !important; }
+[data-theme="dark"] .child-age-field option, body.dark-mode .child-age-field option, html.dark-mode .child-age-field option { background:#172a35; color:#f4f8fa; }
+[data-theme="dark"] .eyebrow, body.dark-mode .eyebrow, html.dark-mode .eyebrow { color:#8fcaff; }
+[data-theme="dark"] .dashboard-mini-stat, body.dark-mode .dashboard-mini-stat, html.dark-mode .dashboard-mini-stat { border-color:#405765; background:#1b303d; }
