@@ -565,6 +565,8 @@ li {
 }
 
 .journey-card {
+    display: flex;
+    flex-direction: column;
     padding: 1.65rem;
     border: 1px solid var(--border, rgba(35, 78, 112, .16));
     border-radius: var(--voice-radius);
@@ -606,7 +608,8 @@ li {
     font-weight: 700;
     color: var(--primary, #234e70);
     text-decoration: none;
-    margin-top: .35rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
 }
 
 .journey-card a:hover {

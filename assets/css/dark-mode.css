@@ -214,9 +214,72 @@ body.dark-mode .topbar a > i.text-primary {
     color: #FFFFFF !important;
 }
 
-/* Button hover text color in dark mode */
-body.dark-mode .btn-primary-custom:hover {
-    color: var(--primary) !important;
+/* Button hover text color in dark mode:
+   Buttons with dark/colored backgrounds on hover keep crisp white text */
+body.dark-mode .btn:hover,
+body.dark-mode .btn:hover *,
+body.dark-mode .btn-premium:hover,
+body.dark-mode .btn-premium:hover *,
+body.dark-mode .btn-secondary-custom:hover,
+body.dark-mode .btn-secondary-custom:hover *,
+body.dark-mode .btn-outline-custom:hover,
+body.dark-mode .btn-outline-custom:hover *,
+body.dark-mode .btn-outline-secondary:hover,
+body.dark-mode .btn-outline-secondary:hover *,
+html.dark-mode .btn:hover,
+html.dark-mode .btn:hover *,
+[data-theme="dark"] .btn:hover,
+[data-theme="dark"] .btn:hover * {
+    color: #ffffff !important;
+}
+
+/* In dark mode, buttons with light/white backgrounds on hover (such as .btn-primary-custom, .btn-light, .btn-outline-light) must have blue text so it is clearly visible */
+body.dark-mode .btn-primary-custom:hover,
+body.dark-mode .btn-primary-custom:hover *,
+body.dark-mode .btn-primary-custom:focus,
+body.dark-mode .btn-primary-custom:focus *,
+body.dark-mode .btn-primary-custom:active,
+body.dark-mode .btn-primary-custom:active *,
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-primary:hover *,
+body.dark-mode .btn-light:hover,
+body.dark-mode .btn-light:hover *,
+body.dark-mode .btn-outline-light:hover,
+body.dark-mode .btn-outline-light:hover *,
+body.dark-mode .btn-white:hover,
+body.dark-mode .btn-white:hover *,
+html.dark-mode .btn-primary-custom:hover,
+html.dark-mode .btn-primary-custom:hover *,
+html.dark-mode .btn-primary-custom:focus,
+html.dark-mode .btn-primary-custom:focus *,
+html.dark-mode .btn-primary:hover,
+html.dark-mode .btn-primary:hover *,
+html.dark-mode .btn-light:hover,
+html.dark-mode .btn-light:hover *,
+html.dark-mode .btn-outline-light:hover,
+html.dark-mode .btn-outline-light:hover *,
+html.dark-mode .btn-white:hover,
+html.dark-mode .btn-white:hover *,
+[data-theme="dark"] .btn-primary-custom:hover,
+[data-theme="dark"] .btn-primary-custom:hover *,
+[data-theme="dark"] .btn-primary-custom:focus,
+[data-theme="dark"] .btn-primary-custom:focus *,
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-primary:hover *,
+[data-theme="dark"] .btn-light:hover,
+[data-theme="dark"] .btn-light:hover *,
+[data-theme="dark"] .btn-outline-light:hover,
+[data-theme="dark"] .btn-outline-light:hover *,
+[data-theme="dark"] .btn-white:hover,
+[data-theme="dark"] .btn-white:hover * {
+    color: var(--primary, #234E70) !important;
+}
+
+/* Auth page primary button hover in dark mode */
+body.dark-mode.auth-page .btn-primary-custom:hover,
+body.dark-mode.auth-page .btn-primary-custom:hover * {
+    background-color: var(--dark) !important;
+    color: var(--primary, #234E70) !important;
 }
 
 /* Fix missing borders on textareas, inputs, and accordion items in dark mode */
@@ -225,7 +288,6 @@ body.dark-mode input.form-control.border-0,
 body.dark-mode .accordion-item.border-0 {
     border: 1px solid var(--border) !important;
 }
-
 
 /* Dark theme contrast and section separation fixes */
 [data-theme="dark"] .section-soft, body.dark-mode .section-soft, html.dark-mode .section-soft { background:#142632 !important; }
@@ -236,3 +298,133 @@ body.dark-mode .accordion-item.border-0 {
 [data-theme="dark"] .child-age-field option, body.dark-mode .child-age-field option, html.dark-mode .child-age-field option { background:#172a35; color:#f4f8fa; }
 [data-theme="dark"] .eyebrow, body.dark-mode .eyebrow, html.dark-mode .eyebrow { color:#8fcaff; }
 [data-theme="dark"] .dashboard-mini-stat, body.dark-mode .dashboard-mini-stat, html.dark-mode .dashboard-mini-stat { border-color:#405765; background:#1b303d; }
+
+/* Contact page & all form selects: white dropdown icon in dark mode */
+body.dark-mode select.form-select,
+html.dark-mode select.form-select,
+[data-theme="dark"] select.form-select,
+body.dark-mode .child-age-field,
+[data-theme="dark"] .child-age-field {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+body.dark-mode .dropdown-toggle::after,
+html.dark-mode .dropdown-toggle::after,
+[data-theme="dark"] .dropdown-toggle::after,
+body.dark-mode .dropdown-toggle i,
+html.dark-mode .dropdown-toggle i,
+[data-theme="dark"] .dropdown-toggle i {
+    color: #ffffff !important;
+}
+
+/* Clear menu visibility in dark mode (desktop dropdowns and mobile collapse) */
+@media (max-width: 1199.98px) {
+    body.dark-mode .navbar-collapse,
+    html.dark-mode .navbar-collapse,
+    [data-theme="dark"] .navbar-collapse {
+        background-color: #12212B !important;
+        padding: 1.25rem 1.5rem !important;
+        border-radius: 14px !important;
+        border: 1px solid rgba(243, 247, 248, 0.15) !important;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45) !important;
+        margin-top: 0.75rem !important;
+    }
+}
+
+body.dark-mode .navbar-premium .nav-link,
+html.dark-mode .navbar-premium .nav-link,
+[data-theme="dark"] .navbar-premium .nav-link {
+    color: #F3F7F8 !important;
+}
+
+body.dark-mode .navbar-premium .nav-link:hover,
+body.dark-mode .navbar-premium .nav-link:focus,
+html.dark-mode .navbar-premium .nav-link:hover,
+[data-theme="dark"] .navbar-premium .nav-link:hover {
+    color: #ffffff !important;
+    background: rgba(100, 181, 246, 0.2) !important;
+}
+
+body.dark-mode .navbar-premium .nav-link.active,
+body.dark-mode .navbar-premium .nav-link[aria-current="page"],
+html.dark-mode .navbar-premium .nav-link.active,
+[data-theme="dark"] .navbar-premium .nav-link.active {
+    color: #ffffff !important;
+    background: rgba(100, 181, 246, 0.28) !important;
+}
+
+body.dark-mode .nav-item.d-xl-none .nav-link.active,
+html.dark-mode .nav-item.d-xl-none .nav-link.active,
+[data-theme="dark"] .nav-item.d-xl-none .nav-link.active {
+    background-color: #234E70 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .dropdown-menu,
+html.dark-mode .dropdown-menu,
+[data-theme="dark"] .dropdown-menu {
+    background-color: #152630 !important;
+    border: 1px solid rgba(243, 247, 248, 0.16) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55) !important;
+}
+
+body.dark-mode .dropdown-item,
+html.dark-mode .dropdown-item,
+[data-theme="dark"] .dropdown-item {
+    color: #F3F7F8 !important;
+}
+
+body.dark-mode .dropdown-item:hover,
+body.dark-mode .dropdown-item:focus,
+html.dark-mode .dropdown-item:hover,
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: rgba(100, 181, 246, 0.22) !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .dropdown-item.active,
+body.dark-mode .dropdown-item:active,
+html.dark-mode .dropdown-item.active,
+[data-theme="dark"] .dropdown-item.active {
+    background-color: #234E70 !important;
+    color: #ffffff !important;
+}
+
+/* Overall High Contrast for Primary-Color Text and Icons in Dark Mode */
+body.dark-mode .text-primary,
+html.dark-mode .text-primary,
+[data-theme="dark"] .text-primary,
+body.dark-mode i.text-primary,
+html.dark-mode i.text-primary,
+[data-theme="dark"] i.text-primary,
+body.dark-mode a.text-primary,
+html.dark-mode a.text-primary,
+[data-theme="dark"] a.text-primary,
+body.dark-mode span.text-primary,
+html.dark-mode span.text-primary,
+[data-theme="dark"] span.text-primary,
+body.dark-mode .group-hover\:text-primary:hover,
+body.dark-mode .journey-card i.text-primary,
+body.dark-mode .premium-card i.text-primary {
+    color: #64B5F6 !important;
+}
+
+body.dark-mode .border-primary,
+html.dark-mode .border-primary,
+[data-theme="dark"] .border-primary {
+    border-color: #64B5F6 !important;
+}
+
+body.dark-mode .bg-soft-blue,
+html.dark-mode .bg-soft-blue,
+[data-theme="dark"] .bg-soft-blue {
+    background-color: rgba(100, 181, 246, 0.16) !important;
+    color: #90CAF9 !important;
+}
+
+body.dark-mode .bg-soft-blue .text-primary,
+html.dark-mode .bg-soft-blue .text-primary,
+[data-theme="dark"] .bg-soft-blue .text-primary {
+    color: #90CAF9 !important;
+}
+
